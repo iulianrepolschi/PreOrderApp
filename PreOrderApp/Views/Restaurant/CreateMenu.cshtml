@@ -1,0 +1,37 @@
+﻿@using PreOrderApp
+@model PreOrderApp.MenuItem
+@{
+    ViewBag.Title = "Create New Menu";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+ </hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+			<li>
+				@Html.LabelFor(m => m.Name)
+				@Html.TextBoxFor(m => m.Name)
+			</li>
+			<li>
+				@Html.LabelFor(m => m.Price)
+				@Html.TextBoxFor(m => m.Price)
+			</li>
+			
+			<li>
+				@Html.LabelFor(m => m.Description)
+				@Html.TextAreaFor(m => m.Description)
+			</li>
+		</ol>
+        <input type="submit" value="Add" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,34 @@
+﻿@using PreOrderApp
+@model PreOrderApp.MenuItem
+
+@{
+	ViewBag.Title = "Select Menu";
+}
+
+<h2>Select Menu</h2>
+
+<h3>Are you sure you want to Select this Menu Item?</h3>
+<fieldset>
+	 @Html.HiddenFor(model => model.Id)
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.Name)
+		@Html.ValidationMessageFor(model=>model.Name)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.Name)
+	</div>
+
+	
+	<div class="display-label">
+		@Html.DisplayNameFor(model => model.Price)
+	</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.Price)
+	</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Select" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

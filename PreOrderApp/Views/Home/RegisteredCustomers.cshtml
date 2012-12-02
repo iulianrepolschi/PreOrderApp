@@ -1,0 +1,66 @@
+﻿@using PreOrderApp
+@using PreOrderApp.Models
+@model IEnumerable<UserProfile>
+
+
+@functions {private object ConcatenateRoles(dynamic userProfile)
+			{
+				string roles = string.Empty;
+				foreach (dynamic role in userProfile.webpages_Roles)
+				{
+					roles += role.RoleName;
+					if (userProfile.webpages_Roles.Count > 1)
+					{
+						roles+=";";
+					}
+				}
+				return roles;
+			}
+
+
+	
+}
+
+@functions {private object function(object active)
+			{
+				if((bool)active)
+				{
+					return "activeItem";
+				}
+				else
+				{
+					return "inactiveItem";
+				}
+			}
+
+}
+
+
+
+<style type="text/css">
+		.webGrid 
+        {
+            width: 100%;
+            border: 0px;
+            border-collapse: collapse;
+        }
+	</style>
+
+@{
+	var grid = new WebGrid(Model,canPage:true, canSort:true,rowsPerPage:10, defaultSort:"LastName");
+	grid.Pager((WebGridPagerModes.NextPrevious));
+	@grid.GetHtml(tableStyle: "webGrid",
+	                    headerStyle: "header",
+	                    alternatingRowStyle: "alt",
+	                    columns: grid.Columns(
+	                    	grid.Column("LastName", Resources.LastName, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.LastName</div></text>),
+							grid.Column("FirstName", Resources.FirstName, canSort: true, 
+								format: @<text><div class=@function(item.Active)>@item.FirstName</div></text>),
+							grid.Column("UserName", Resources.UserName, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.UserName</div></text>),
+							grid.Column("Email", Resources.EmailAddress, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.Email</div></text>),
+							grid.Column(format: (item) => Html.ActionLink(item.Active ? Resources.Inactivate : Resources.Activate, "Delete", new { id = item.UserId }))
+	));
+}

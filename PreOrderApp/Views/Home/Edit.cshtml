@@ -1,0 +1,82 @@
+﻿@using PreOrderApp
+@model PreOrderApp.UserProfile
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UserProfile</legend>
+
+        @Html.HiddenFor(model => model.UserId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+		
+		@if (ViewBag.RoleName == "Restaurant")
+		{
+			<div class="editor-label">
+				@Html.Label(Resources.RestaurantName)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.LastName)
+				@Html.ValidationMessageFor(model => model.LastName)
+			</div>
+		}
+		else
+		{
+			<div class="editor-label">
+				@Html.Label(Resources.LastName)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.LastName)
+				@Html.ValidationMessageFor(model => model.LastName)
+			</div>
+	  
+			<div class="editor-label">
+				@Html.Label(Resources.FirstName)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.FirstName)
+				@Html.ValidationMessageFor(model => model.FirstName)
+			</div>
+		}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Active)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Active)
+            @Html.ValidationMessageFor(model => model.Active)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", ViewBag.RoleName == "Customer" ? "RegisteredCustomers" : "RegisteredRestaurants")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

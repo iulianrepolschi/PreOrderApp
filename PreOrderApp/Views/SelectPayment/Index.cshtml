@@ -1,0 +1,32 @@
+﻿@using PreOrderApp
+@using PreOrderApp.Models
+@model IEnumerable<MenuItem>
+
+
+
+
+<style type="text/css">
+		.webGrid 
+        {
+            width: 100%;
+            border: 0px;
+            border-collapse: collapse;
+        }
+	</style>
+
+@{
+	var grid = new WebGrid(Model,canPage:true, canSort:true,rowsPerPage:5);
+	grid.Pager((WebGridPagerModes.NextPrevious));
+	@grid.GetHtml(tableStyle: "webGrid",
+	                    headerStyle: "header",
+	                    alternatingRowStyle: "alt",
+	                    columns: grid.Columns(
+							grid.Column("ImageUrl", Resources.MenuItemImage,canSort:false,
+								format: (item) => (string.IsNullOrEmpty(item.ImageUrl)) ? Html.Raw("") :Html.Raw("<img width='100' height='100' src='../../Images/MenuItems/"+item.ImageUrl+"' />")),
+							grid.Column("Name", Resources.MenuItemName, canSort: false),
+									grid.Column("Price", Resources.MenuItemPrice, canSort: false, format: @<text><div style="text-align: right">@item.Price</div></text>),
+															grid.Column("Description", Resources.MenuItemDescription, canSort: false),
+															grid.Column("UserProfile.LastName", Resources.RestaurantName, canSort: false),
+															grid.Column(format: (item) => Html.ActionLink(Resources.SelectMenu, "SelectMenu", new { id = item.Id }))
+																																			));
+}

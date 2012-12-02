@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        A web app to pre order, not just the table, but also the food in a restaurant.
+    </p>
+
+    <p>
+        All this to save time on lunch breaks.
+    </p>
+
+    <p>
+        And create additional revenue for the restaurant..
+    </p>
+</article>
+
+<aside>
+    <h3>Jump To</h3>
+    <br/>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>

@@ -1,0 +1,47 @@
+﻿@using PreOrderApp
+@using PreOrderApp.Models
+@model IEnumerable<UserProfile>
+
+@functions {private object function(object active)
+			{
+				if((bool)active)
+				{
+					return "activeItem";
+				}
+				else
+				{
+					return "inactiveItem";
+				}
+			}
+
+}
+
+
+
+<style type="text/css">
+		.webGrid 
+        {
+            width: 100%;
+            border: 0px;
+            border-collapse: collapse;
+        }
+	</style>
+<div style="background: #e8eef4;border-width:1 1 1px;"> <h3>@Html.ActionLink(Resources.RestaurantCreateNew, "RegisterRestaurant")</h3></div>
+
+@{
+	var grid = new WebGrid(Model,canPage:true, canSort:true,rowsPerPage:10, defaultSort:"LastName");
+	grid.Pager((WebGridPagerModes.NextPrevious));
+	@grid.GetHtml(tableStyle: "webGrid",
+	                    headerStyle: "header",
+	                    alternatingRowStyle: "alt",
+	                    columns: grid.Columns(
+							grid.Column("LastName", Resources.RestaurantName, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.LastName</div></text>),
+							grid.Column("UserName", Resources.UserName, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.UserName</div></text>),
+							grid.Column("Email", Resources.EmailAddress, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.Email</div></text>),
+							grid.Column(format: (item) => Html.ActionLink(Resources.Edit, "Edit", new { id = item.UserId })),
+							grid.Column(format: (item) => Html.ActionLink(item.Active ? Resources.Inactivate : Resources.Activate, "Delete", new { id = item.UserId }))
+	));
+}

@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Ajutor</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Utilizatori</value>
+  </data>
+  <data name="AccountInformation" xml:space="preserve">
+    <value>Informații Utilizator</value>
+  </data>
+  <data name="AccountValidationUnsuccessfulSummary" xml:space="preserve">
+    <value>Crearea utilizatorului a fost nereușită. Corectați erorile și mai încercați odată</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Activează</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Activ</value>
+  </data>
+  <data name="AreYouSureYouWantToDelete" xml:space="preserve">
+    <value>Ești sigur că vrei să ștergi?</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Înapoi la listă</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Schimbare Parolă</value>
+  </data>
+  <data name="ChangePasswordMessage" xml:space="preserve">
+    <value>Utilizează formularul de mai jos pentru a schimba parola</value>
+  </data>
+  <data name="ChangePasswordSuccessfully" xml:space="preserve">
+    <value>Parola a fost schimbată cu success</value>
+  </data>
+  <data name="ChangePasswordValidationUnsuccessfulSummary" xml:space="preserve">
+    <value>Schimbarea parolei a fost nereușită. Corectați erorile și mai încercați odată</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmați Parola Nouă</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmare parolă</value>
+  </data>
+  <data name="CreateNewPersonMessage" xml:space="preserve">
+    <value>Utilizează formularul de ma jos pentru a crea un nou utilizator</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Parolă Curentă</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Șterge</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modifică</value>
+  </data>
+  <data name="ElectronicRegister" xml:space="preserve">
+    <value>Registru Electronic</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Adresă e-mail</value>
+  </data>
+  <data name="ExpireDateMakesNoSenseForThisDocumentType" xml:space="preserve">
+    <value>Data Expirare nu are sens pentru acest tip de document</value>
+  </data>
+  <data name="ExpireDateMustBeIntroduced" xml:space="preserve">
+    <value>Data Expirare trebuie introdusă pentru acest tip de document</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtru</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Început</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Prenume</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Acasă</value>
+  </data>
+  <data name="Inactivate" xml:space="preserve">
+    <value>Inactivează</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Sfârșit</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="LogingMessage" xml:space="preserve">
+    <value>Introdu numele de utilizator și parola</value>
+  </data>
+  <data name="LoginMessageToRegister" xml:space="preserve">
+    <value>dacă nu ai un cont deja.</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Conectează-te</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Parola Nouă</value>
+  </data>
+  <data name="NewPasswordRequirementsMessage" xml:space="preserve">
+    <value>Noua parolă trebuie sa fie de minim {0} caractere</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Următorul</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="OldAndNewPasswordDoesNotMatch" xml:space="preserve">
+    <value>Parola nouă și cea veche nu corespund</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parolă</value>
+  </data>
+  <data name="PasswordLengthToSmall" xml:space="preserve">
+    <value>{0} trebuie să fie cel puțin {2} caractere.</value>
+  </data>
+  <data name="PasswordRequirementsMessage" xml:space="preserve">
+    <value>Parola trebuie sa fie de minim {0} caractere</value>
+  </data>
+  <data name="PersonCreateNew" xml:space="preserve">
+    <value>Crează Utilizator</value>
+  </data>
+  <data name="PersonIndexPage" xml:space="preserve">
+    <value>Listă</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Precedentul</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Imprimare</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Înregistreaza-te</value>
+  </data>
+  <data name="RegisterCreateNew" xml:space="preserve">
+    <value>Crează intrare registru</value>
+  </data>
+  <data name="RegisterDate" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="RegisterDestination" xml:space="preserve">
+    <value>Destinatar</value>
+  </data>
+  <data name="RegisterDocumentType" xml:space="preserve">
+    <value>Tip Document</value>
+  </data>
+  <data name="RegisterExpireDate" xml:space="preserve">
+    <value>Data Expirare</value>
+  </data>
+  <data name="RegisterExplanations" xml:space="preserve">
+    <value>Explicații</value>
+  </data>
+  <data name="RegisterIndexPage" xml:space="preserve">
+    <value>Listă</value>
+  </data>
+  <data name="RegisterMode" xml:space="preserve">
+    <value>Mod Transmitere</value>
+  </data>
+  <data name="RegisterNumber" xml:space="preserve">
+    <value>Număr</value>
+  </data>
+  <data name="RegisterNumberEntries" xml:space="preserve">
+    <value>Număr Intrări</value>
+  </data>
+  <data name="RegisterOtherTransmissionMode" xml:space="preserve">
+    <value>Alt mod de transmitere</value>
+  </data>
+  <data name="RegisterTab" xml:space="preserve">
+    <value>Registru</value>
+  </data>
+  <data name="RegisterType" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="RegisterTypeInput" xml:space="preserve">
+    <value>Intrare</value>
+  </data>
+  <data name="RegisterTypeOutput" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="RegisterUser" xml:space="preserve">
+    <value>Utilizator</value>
+  </data>
+  <data name="RegistruExpireStartEndRange" xml:space="preserve">
+    <value>Dată început-sfârșit Expirare</value>
+  </data>
+  <data name="RegistruStartEndRange" xml:space="preserve">
+    <value>Dată început-sfârșit</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Ține-mă minte</value>
+  </data>
+  <data name="ResetFilter" xml:space="preserve">
+    <value>Șterge Filtru</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Resetare parolă</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="Role1" xml:space="preserve">
+    <value>Tip Utilizator</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvare</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Caută</value>
+  </data>
+  <data name="UnsucccessfulLogin" xml:space="preserve">
+    <value>Conectarea a eșhuat. Încearcă din nou.</value>
+  </data>
+  <data name="UserLoggedFromDifferentPlace" xml:space="preserve">
+    <value>Utilizatorul {0} este deja connectat. Deconecteză-i sesiunea sau așteapta ({1} minute) ca aceasta să expire.</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Nume Utilizator</value>
+  </data>
+  <data name="UserNotActive" xml:space="preserve">
+    <value>Utilizatorul {0} nu este activ. Doar utilizatorii activi se pot conecta.</value>
+  </data>
+  <data name="ValidationMissingRequiredField" xml:space="preserve">
+    <value>Acest câmp este obligatoriu</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Bine ai venit!</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="YouMustSpecifyCurrentPassword" xml:space="preserve">
+    <value>Câmpul Parolă Curentă este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyDestinatar" xml:space="preserve">
+    <value>Câmpul Destinatar este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyEmailAddress" xml:space="preserve">
+    <value>Câmpul Adresă email este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyExplicatii" xml:space="preserve">
+    <value>Câmpul Explicații este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyFirstName" xml:space="preserve">
+    <value>Câmpul Prenume este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyLastName" xml:space="preserve">
+    <value>Câmpul Nume este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyNewPassword" xml:space="preserve">
+    <value>Câmpul Parola Nouă este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyPassword" xml:space="preserve">
+    <value>Câmpul Parolă este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyRegisterMode" xml:space="preserve">
+    <value>Câmpul Mod Transmitere este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyRegisterType" xml:space="preserve">
+    <value>Câmpul Tip este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyRole" xml:space="preserve">
+    <value>Câmpul Tip Utilizator este obligatoriu</value>
+  </data>
+  <data name="YouMustSpecifyUserName" xml:space="preserve">
+    <value>Câmpul Nume Utilizator este obligatoriu</value>
+  </data>
+  <data name="RestaurantCreateNew" xml:space="preserve">
+    <value>Creaza un nou restaurant</value>
+  </data>
+  <data name="RestaurantName" xml:space="preserve">
+    <value>Nume Restaurant</value>
+  </data>
+  <data name="MenuItemCreateNew" xml:space="preserve">
+    <value>Creaza un nou meniu</value>
+  </data>
+  <data name="MenuItemDescription" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="MenuItemImage" xml:space="preserve">
+    <value>Poza</value>
+  </data>
+  <data name="MenuItemName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="MenuItemPrice" xml:space="preserve">
+    <value>Pret</value>
+  </data>
+  <data name="MenuItemActive" xml:space="preserve">
+    <value>Activ</value>
+  </data>
+  <data name="SelectMenu" xml:space="preserve">
+    <value>Selecteaza Meniu</value>
+  </data>
+</root>

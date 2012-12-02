@@ -1,0 +1,61 @@
+﻿@using PreOrderApp
+@model PreOrderApp.UserProfile
+
+@{
+	ViewBag.Title = "Activate/Inactivate";
+}
+
+<h2>Activate / Inactivate</h2>
+@{
+	string activateText = Model.Active ? "Inactivate" : "Activate";
+}
+<h3>Are you sure you want to @activateText this @ViewBag.RoleName?</h3>
+<fieldset>
+    <legend>Restaurant</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+
+	@if (ViewBag.RoleName == "Restaurant")
+		{
+			<div class="display-label">
+				@Html.Label(Resources.RestaurantName)
+			</div>
+			<div class="display-field">
+				@Html.DisplayFor(model => model.LastName)
+			</div>
+		}
+		else
+		{
+			<div class="display-label">
+				@Html.DisplayNameFor(model => model.LastName)
+			</div>
+			<div class="display-field">
+				@Html.DisplayFor(model => model.LastName)
+			</div>
+	  
+			<div class="display-label">
+				@Html.DisplayNameFor(model => model.FirstName)
+			</div>
+			<div class="display-field">
+				@Html.DisplayFor(model => model.FirstName)
+			</div>
+		}
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value=@activateText /> |
+        @Html.ActionLink("Back to List", ViewBag.RoleName == "Customer" ? "RegisteredCustomers" : "RegisteredRestaurants")
+    </p>
+}

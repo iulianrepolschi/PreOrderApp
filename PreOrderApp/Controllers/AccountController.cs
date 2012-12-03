@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Objects;
 using System.Linq;
 using System.Transactions;
 using System.Web;
@@ -28,9 +29,37 @@ namespace PreOrderApp.Controllers
 
 			ViewBag.RoleId = new SelectList(_database.webpages_Roles.Where(roles => roles.RoleName == "Customer"), "RoleId", "RoleName");
 
+			int[] numberOfCustomersAndRestaurants = GetNumberOfCustomersAndRestaurants();
+
+			this.Session.Add("Customers", numberOfCustomersAndRestaurants[0]);
+			this.Session.Add("Restaurants", numberOfCustomersAndRestaurants[1]);
+
 			return View(users);
 
 		}
+
+		private int[] GetNumberOfCustomersAndRestaurants()
+		{
+			ObjectQuery<UserProfile> userProfiles = _database.UserProfiles;
+			int customers = 0;
+			int restaurants = 0;
+			foreach (UserProfile userProfile in userProfiles)
+			{
+				webpages_Roles role = userProfile.webpages_Roles.FirstOrDefault();
+				if (role.RoleName == "Customer")
+				{
+					customers++;
+				}
+				else if (role.RoleName == "Restaurant")
+				{
+					restaurants++;
+				}
+			}
+			return new int[] {customers, restaurants};
+		}
+
+	
+		
 
 		public ViewResult Content()
 		{

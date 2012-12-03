@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Providers.Entities;
 using System.Web.Security;
 using PreOrderApp.Models;
 using WebMatrix.WebData;
@@ -19,7 +21,31 @@ namespace PreOrderApp.Controllers
 		{
 			ViewBag.Message = "Index Home Controler";
 
+			int[] numberOfCustomersAndRestaurants = GetNumberOfCustomersAndRestaurants();
+
+			this.Session.Add("Customers",numberOfCustomersAndRestaurants[0]);
+			this.Session.Add("Restaurants",numberOfCustomersAndRestaurants[1]);
 			return View();
+		}
+
+		private int[] GetNumberOfCustomersAndRestaurants()
+		{
+			ObjectQuery<UserProfile> userProfiles = _database.UserProfiles;
+			int customers = 0;
+			int restaurants = 0;
+			foreach (UserProfile userProfile in userProfiles)
+			{
+				webpages_Roles role = userProfile.webpages_Roles.FirstOrDefault();
+				if (role.RoleName == "Customer")
+				{
+					customers++;
+				}
+				else if (role.RoleName == "Restaurant")
+				{
+					restaurants++;
+				}
+			}
+			return new int[] { customers, restaurants };
 		}
 
 		public ActionResult About()

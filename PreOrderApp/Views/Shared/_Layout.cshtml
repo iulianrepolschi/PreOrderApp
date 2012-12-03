@@ -20,8 +20,16 @@
 						@Html.Partial("_LoginPartial")
 					</section>
 					<nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
+						<ul id="menu">
+							@{
+								object customers = this.Session["Customers"];
+								object restaurants = this.Session["Restaurants"];
+								string nrCustomers = (customers == null) ? "0" : customers.ToString();
+								string nrRestaurants = (restaurants == null) ? "0" : restaurants.ToString();
+							}
+
+							<li style="color: red">@nrCustomers Customers and @nrRestaurants Restaurants !!!</li>
+							<li>@Html.ActionLink("About", "About", "Home")</li>
 							<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 							@{
 								if(Roles.IsUserInRole("Administrator"))
@@ -44,7 +52,7 @@
 									<li>@Html.ActionLink("Menu Offers", "Index", "SelectPayment")</li>		
 								}
 							}
-                        </ul>
+						</ul>
                     </nav>
                 </div>
             </div>

@@ -25,6 +25,7 @@
 		                    columns: grid.Columns(
 								grid.Column("Date", Resources.RegisterDate, canSort: true, format: (item) => item.Date.ToString("dd.MM.yyyy HH:mm")),
 										grid.Column("MenuItem.Name", Resources.MenuItemName, canSort: true),
+										grid.Column("ReservationHour", Resources.RestaurantReservationHour, canSort: false),
 								grid.Column("MenuItem.Price", Resources.MenuItemPrice, canSort: true, format: @<text><div style="text-align: right">@item.MenuItem.Price</div></text>),
 										grid.Column("UserProfileRestaurant.LastName", Resources.RestaurantName, canSort: true)
 		                    	))
@@ -37,8 +38,9 @@
 							alternatingRowStyle: "alt",
 							columns: grid.Columns(
 								grid.Column("Date", Resources.RegisterDate, canSort: true, format: (item) => item.Date.ToString("dd.MM.yyyy HH:mm")),
-								grid.Column("MenuItem.Name", "Name", canSort: true),
-								grid.Column("MenuItem.Price", "Price (Euro)", canSort: true),
+								grid.Column("ReservationHour", Resources.RestaurantReservationHour, canSort: false),
+								grid.Column("MenuItem.Name", Resources.MenuItemName, canSort: true),
+										grid.Column("MenuItem.Price", Resources.MenuItemPrice, canSort: true),
 								grid.Column("UserProfile", "Customer", canSort: true, format: (item) => item.UserProfile.LastName + " " + item.UserProfile.FirstName)
 								))
 		;	

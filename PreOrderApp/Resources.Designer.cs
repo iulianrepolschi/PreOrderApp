@@ -727,6 +727,15 @@ namespace PreOrderApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string RestaurantAddress {
+            get {
+                return ResourceManager.GetString("RestaurantAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create New Restaurant.
         /// </summary>
         public static string RestaurantCreateNew {
@@ -736,11 +745,65 @@ namespace PreOrderApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Homepage.
+        /// </summary>
+        public static string RestaurantHomepage {
+            get {
+                return ResourceManager.GetString("RestaurantHomepage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restaurant Name.
         /// </summary>
         public static string RestaurantName {
             get {
                 return ResourceManager.GetString("RestaurantName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duration.
+        /// </summary>
+        public static string RestaurantReservationDuration {
+            get {
+                return ResourceManager.GetString("RestaurantReservationDuration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End Hour.
+        /// </summary>
+        public static string RestaurantReservationEndHour {
+            get {
+                return ResourceManager.GetString("RestaurantReservationEndHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reservation Hour.
+        /// </summary>
+        public static string RestaurantReservationHour {
+            get {
+                return ResourceManager.GetString("RestaurantReservationHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Hour.
+        /// </summary>
+        public static string RestaurantReservationStartHour {
+            get {
+                return ResourceManager.GetString("RestaurantReservationStartHour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telephone.
+        /// </summary>
+        public static string RestaurantTelephone {
+            get {
+                return ResourceManager.GetString("RestaurantTelephone", resourceCulture);
             }
         }
         

@@ -71,7 +71,8 @@ namespace PreOrderApp.Controllers
 		public ActionResult Edit(int id)
 		{
 			UserProfile userProfile = _database.UserProfiles.Single(userPorofile => userPorofile.UserId == id);
-
+			webpages_Roles role = userProfile.webpages_Roles.FirstOrDefault();
+			ViewBag.RoleName = role.RoleName;
 			return View(userProfile);
 		}
 

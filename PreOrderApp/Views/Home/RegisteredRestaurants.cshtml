@@ -41,7 +41,13 @@
 								format: @<text><div class=@function(item.Active)>@item.UserName</div></text>),
 							grid.Column("Email", Resources.EmailAddress, canSort: true,
 								format: @<text><div class=@function(item.Active)>@item.Email</div></text>),
+							grid.Column("Address", Resources.RestaurantAddress, canSort: true,
+								format: @<text><div class=@function(item.Active)>@item.Address</div></text>),
+							grid.Column("Telephone", Resources.RestaurantTelephone, canSort: false,
+								format: @<text><div class=@function(item.Active)>@item.Telephone</div></text>),
+							grid.Column("Homepage", Resources.RestaurantHomepage, canSort: false,
+								format: @<text><div class=@function(item.Active)>@item.Homepage</div></text>),
 							grid.Column(format: (item) => Html.ActionLink(Resources.Edit, "Edit", new { id = item.UserId })),
 							grid.Column(format: (item) => Html.ActionLink(item.Active ? Resources.Inactivate : Resources.Activate, "Delete", new { id = item.UserId }))
-	));
+																												));
 }

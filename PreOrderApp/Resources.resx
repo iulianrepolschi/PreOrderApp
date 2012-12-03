@@ -417,4 +417,25 @@
   <data name="SelectMenu" xml:space="preserve">
     <value>Select Menu</value>
   </data>
+  <data name="RestaurantAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="RestaurantHomepage" xml:space="preserve">
+    <value>Homepage</value>
+  </data>
+  <data name="RestaurantTelephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="RestaurantReservationDuration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="RestaurantReservationEndHour" xml:space="preserve">
+    <value>End Hour</value>
+  </data>
+  <data name="RestaurantReservationHour" xml:space="preserve">
+    <value>Reservation Hour</value>
+  </data>
+  <data name="RestaurantReservationStartHour" xml:space="preserve">
+    <value>Start Hour</value>
+  </data>
 </root>

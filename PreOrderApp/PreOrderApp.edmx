@@ -57,6 +57,7 @@
           <Property Name="MenuItemId" Type="int" Nullable="false" />
           <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="RestaurantID" Type="int" Nullable="false" />
+          <Property Name="ReservationHour" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="UserProfile">
           <Key>
@@ -68,6 +69,12 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="256" />
           <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="256" />
+          <Property Name="Homepage" Type="nvarchar" MaxLength="256" />
+          <Property Name="ReservationStart" Type="time" />
+          <Property Name="ReservationEnd" Type="time" />
+          <Property Name="ReservationDuration" Type="int" />
         </EntityType>
         <EntityType Name="webpages_Roles">
           <Key>
@@ -200,6 +207,12 @@
           <Property Type="String" Name="Email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="Active" Nullable="false" />
           <NavigationProperty Name="Payments1" Relationship="PreOrderAppModel.FK_Payment_UserProfile1" FromRole="UserProfile" ToRole="Payment" />
+          <Property Type="String" Name="Address" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Telephone" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Homepage" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Time" Name="ReservationStart" />
+          <Property Type="Time" Name="ReservationEnd" />
+          <Property Type="Int32" Name="ReservationDuration" />
         </EntityType>
         <EntityType Name="webpages_Roles">
           <Key>
@@ -239,6 +252,7 @@
           <NavigationProperty Name="UserProfile" Relationship="PreOrderAppModel.FK_Payment_UserProfile" FromRole="Payment" ToRole="UserProfile" />
           <Property Type="Int32" Name="RestaurantID" Nullable="false" />
           <NavigationProperty Name="UserProfileRestaurant" Relationship="PreOrderAppModel.FK_Payment_UserProfile1" FromRole="Payment" ToRole="UserProfile" />
+          <Property Type="String" Name="ReservationHour" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_MenuItem_UserProfile">
           <End Type="PreOrderAppModel.UserProfile" Role="UserProfile" Multiplicity="1" />
@@ -297,6 +311,12 @@
           <EntitySetMapping Name="UserProfiles">
             <EntityTypeMapping TypeName="PreOrderAppModel.UserProfile">
               <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="ReservationDuration" ColumnName="ReservationDuration" />
+                <ScalarProperty Name="ReservationEnd" ColumnName="ReservationEnd" />
+                <ScalarProperty Name="ReservationStart" ColumnName="ReservationStart" />
+                <ScalarProperty Name="Homepage" ColumnName="Homepage" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -338,6 +358,7 @@
           <EntitySetMapping Name="Payments">
             <EntityTypeMapping TypeName="PreOrderAppModel.Payment">
               <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="ReservationHour" ColumnName="ReservationHour" />
                 <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />

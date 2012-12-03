@@ -9,6 +9,7 @@
 
 using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
@@ -298,7 +299,8 @@ namespace PreOrderApp
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Double Price
+		[Display(Name = "MenuItemPrice", ResourceType = typeof(Resources))]
+	    public global::System.Double Price
         {
             get
             {
@@ -613,6 +615,30 @@ namespace PreOrderApp
         private global::System.Int32 _RestaurantID;
         partial void OnRestaurantIDChanging(global::System.Int32 value);
         partial void OnRestaurantIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ReservationHour
+        {
+            get
+            {
+                return _ReservationHour;
+            }
+            set
+            {
+                OnReservationHourChanging(value);
+                ReportPropertyChanging("ReservationHour");
+                _ReservationHour = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ReservationHour");
+                OnReservationHourChanged();
+            }
+        }
+        private global::System.String _ReservationHour;
+        partial void OnReservationHourChanging(global::System.String value);
+        partial void OnReservationHourChanged();
 
         #endregion
 
@@ -912,6 +938,150 @@ namespace PreOrderApp
         private global::System.Boolean _Active;
         partial void OnActiveChanging(global::System.Boolean value);
         partial void OnActiveChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Address
+        {
+            get
+            {
+                return _Address;
+            }
+            set
+            {
+                OnAddressChanging(value);
+                ReportPropertyChanging("Address");
+                _Address = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Address");
+                OnAddressChanged();
+            }
+        }
+        private global::System.String _Address;
+        partial void OnAddressChanging(global::System.String value);
+        partial void OnAddressChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Telephone
+        {
+            get
+            {
+                return _Telephone;
+            }
+            set
+            {
+                OnTelephoneChanging(value);
+                ReportPropertyChanging("Telephone");
+                _Telephone = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Telephone");
+                OnTelephoneChanged();
+            }
+        }
+        private global::System.String _Telephone;
+        partial void OnTelephoneChanging(global::System.String value);
+        partial void OnTelephoneChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Homepage
+        {
+            get
+            {
+                return _Homepage;
+            }
+            set
+            {
+                OnHomepageChanging(value);
+                ReportPropertyChanging("Homepage");
+                _Homepage = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Homepage");
+                OnHomepageChanged();
+            }
+        }
+        private global::System.String _Homepage;
+        partial void OnHomepageChanging(global::System.String value);
+        partial void OnHomepageChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.TimeSpan> ReservationStart
+        {
+            get
+            {
+                return _ReservationStart;
+            }
+            set
+            {
+                OnReservationStartChanging(value);
+                ReportPropertyChanging("ReservationStart");
+                _ReservationStart = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ReservationStart");
+                OnReservationStartChanged();
+            }
+        }
+        private Nullable<global::System.TimeSpan> _ReservationStart;
+        partial void OnReservationStartChanging(Nullable<global::System.TimeSpan> value);
+        partial void OnReservationStartChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.TimeSpan> ReservationEnd
+        {
+            get
+            {
+                return _ReservationEnd;
+            }
+            set
+            {
+                OnReservationEndChanging(value);
+                ReportPropertyChanging("ReservationEnd");
+                _ReservationEnd = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ReservationEnd");
+                OnReservationEndChanged();
+            }
+        }
+        private Nullable<global::System.TimeSpan> _ReservationEnd;
+        partial void OnReservationEndChanging(Nullable<global::System.TimeSpan> value);
+        partial void OnReservationEndChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ReservationDuration
+        {
+            get
+            {
+                return _ReservationDuration;
+            }
+            set
+            {
+                OnReservationDurationChanging(value);
+                ReportPropertyChanging("ReservationDuration");
+                _ReservationDuration = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ReservationDuration");
+                OnReservationDurationChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ReservationDuration;
+        partial void OnReservationDurationChanging(Nullable<global::System.Int32> value);
+        partial void OnReservationDurationChanged();
 
         #endregion
 

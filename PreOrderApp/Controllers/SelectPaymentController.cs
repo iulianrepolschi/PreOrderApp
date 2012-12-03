@@ -26,15 +26,45 @@ namespace PreOrderApp.Controllers
 		public ActionResult SelectMenu(int id)
 		{
 			MenuItem menuItem = _database.MenuItems.Single(menu => menu.Id == id);
-
-			return View(menuItem);
+			UserProfile restaurant = _database.UserProfiles.Where(user => user.UserId == menuItem.UserId).FirstOrDefault();
+			List<string> reservations=new List<string>();
+			if(restaurant.ReservationStart.HasValue)
+			{
+				bool isIn = true;
+				string time = string.Format("{0}:{1}", restaurant.ReservationStart.Value.ToString("hh"), restaurant.ReservationStart.Value.ToString("mm"));
+				TimeSpan start = restaurant.ReservationStart.Value;
+				while (isIn)
+				{
+					time = string.Format("{0}:{1}", start.ToString("hh"), start.ToString("mm"));
+					reservations.Add(time);
+					start=start.Add(TimeSpan.FromMinutes(restaurant.ReservationDuration.Value));
+					isIn = (start <= restaurant.ReservationEnd.Value);
+				}
+			}
+			else
+			{
+				reservations.AddRange(new string[]{"11:30", "12:00", "12:30", "13:00", "13:30", "14:00"});
+			}
+			//ViewBag.ReservationHour = new SelectList(reservations);
+			List<SelectListItem> selectListItems = new List<SelectListItem>();
+			foreach (string reservation in reservations)
+			{
+				selectListItems.Add(new SelectListItem(){Text=reservation, Value = reservation});
+			}
+			MenuItemModel menuItemModel = new MenuItemModel();
+			menuItemModel.Id = menuItem.Id;
+			menuItemModel.Price = menuItem.Price;
+			menuItemModel.Name = menuItem.Name;
+			menuItemModel.ReservationHour = "12:00";
+			menuItemModel.RestaurantReservationHours = selectListItems;
+			return View(menuItemModel);
 		}
 
 		//
 		// POST: /Registru/Edit/5
 
 		[HttpPost]
-		public ActionResult SelectMenu(MenuItem menuItem)
+		public ActionResult SelectMenu(MenuItemModel menuItem)
 		{
 			try
 			{
@@ -48,6 +78,7 @@ namespace PreOrderApp.Controllers
 					payment.UserId = WebSecurity.CurrentUserId;
 					payment.Date = DateTime.Now;
 					payment.RestaurantID = item.UserId;
+					payment.ReservationHour = menuItem.ReservationHour;
 					_database.Payments.Attach(payment);
 					_database.ObjectStateManager.ChangeObjectState(payment, EntityState.Added);
 					_database.SaveChanges();

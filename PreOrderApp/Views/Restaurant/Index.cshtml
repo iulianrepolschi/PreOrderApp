@@ -33,8 +33,8 @@
 	                    headerStyle: "header",
 	                    alternatingRowStyle: "alt",
 	                    columns: grid.Columns(
-							grid.Column("ImageUrl", Resources.MenuItemImage,canSort:false,
-								format: (item) => (string.IsNullOrEmpty(item.ImageUrl)) ? Html.Raw("") :Html.Raw("<img width='100' height='100' src='../../Images/MenuItems/"+item.ImageUrl+"' />")),
+						//	grid.Column("ImageUrl", Resources.MenuItemImage,canSort:false,
+							//	format: (item) => (string.IsNullOrEmpty(item.ImageUrl)) ? Html.Raw("") :Html.Raw("<img width='100' height='100' src='../../Images/MenuItems/"+item.ImageUrl+"' />")),
 							grid.Column("Name", Resources.MenuItemName, canSort: false,
 								format: @<text><div class=@function(item.Active)>@item.Name</div></text>),
 							grid.Column("Price", Resources.MenuItemPrice, canSort: false, format: @<text><div class=@function(item.Active) style="text-align: right">@item.Price</div></text>),

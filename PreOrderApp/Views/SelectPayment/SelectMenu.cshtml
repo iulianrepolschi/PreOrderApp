@@ -1,5 +1,5 @@
 ﻿@using PreOrderApp
-@model PreOrderApp.MenuItem
+@model PreOrderApp.Models.MenuItemModel
 
 @{
 	ViewBag.Title = "Select Menu";
@@ -8,11 +8,22 @@
 <h2>Select Menu</h2>
 
 <h3>Are you sure you want to Select this Menu Item?</h3>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
 <fieldset>
 	 @Html.HiddenFor(model => model.Id)
+	
+	 <div class="editor-label" >
+		@Html.LabelFor(model => model.ReservationHour, Resources.RestaurantReservationHour)
+	</div>
+	<div class="editor-field" >
+		@Html.DropDownListFor(m => m.ReservationHour, Model.RestaurantReservationHours)
+		@Html.ValidationMessageFor(model => model.ReservationHour)
+	</div>
+	
 	<div class="display-label">
 		@Html.DisplayNameFor(model => model.Name)
-		@Html.ValidationMessageFor(model=>model.Name)
+		@Html.ValidationMessageFor(model => model.Name)
 	</div>
 	<div class="display-field">
 		@Html.DisplayFor(model => model.Name)
@@ -26,9 +37,13 @@
 		@Html.DisplayFor(model => model.Price)
 	</div>
 </fieldset>
-@using (Html.BeginForm()) {
+
     <p>
         <input type="submit" value="Select" /> |
         @Html.ActionLink("Back to List", "Index")
     </p>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

@@ -32,9 +32,58 @@
 				@Html.EditorFor(model => model.LastName)
 				@Html.ValidationMessageFor(model => model.LastName)
 			</div>
+	  
+			<div class="editor-label">
+				@Html.Label(Resources.RestaurantStartHour)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.ReservationStart)
+				@Html.ValidationMessageFor(model => model.ReservationStart)
+			</div>
+	  
+	  		<div class="editor-label">
+				@Html.Label(Resources.RestaurantEndHour)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.ReservationEnd)
+				@Html.ValidationMessageFor(model => model.ReservationEnd)
+			</div>
+	  
+	  <div class="editor-label">
+				@Html.Label(Resources.RestaurantDuration)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.ReservationDuration)
+				@Html.ValidationMessageFor(model => model.ReservationDuration)
+			</div>
+	  
+	  
+			<div class="editor-label">
+				@Html.Label(Resources.RestaurantAddress)
+			</div>
+			<div class="editor-field">
+				@Html.TextAreaFor(model => model.Address)
+				@Html.ValidationMessageFor(model => model.Address)
+			</div>
+	  
+			<div class="editor-label">
+				@Html.Label(Resources.RestaurantTelephone)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Telephone)
+				@Html.ValidationMessageFor(model => model.Telephone)
+			</div>
+	  
+			<div class="editor-label">
+				@Html.Label(Resources.RestaurantHomepage)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Homepage)
+				@Html.ValidationMessageFor(model => model.Homepage)
+			</div>
 		}
-		else
-		{
+  else
+  {
 			<div class="editor-label">
 				@Html.Label(Resources.LastName)
 			</div>
@@ -50,7 +99,7 @@
 				@Html.EditorFor(model => model.FirstName)
 				@Html.ValidationMessageFor(model => model.FirstName)
 			</div>
-		}
+  }
         <div class="editor-label">
             @Html.LabelFor(model => model.Email)
         </div>

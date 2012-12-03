@@ -22,9 +22,11 @@ namespace PreOrderApp.Controllers
 			ViewBag.Message = "Index Home Controler";
 
 			int[] numberOfCustomersAndRestaurants = GetNumberOfCustomersAndRestaurants();
-
-			this.Session.Add("Customers",numberOfCustomersAndRestaurants[0]);
-			this.Session.Add("Restaurants",numberOfCustomersAndRestaurants[1]);
+			if (Session != null)
+			{
+				this.Session.Add("Customers", numberOfCustomersAndRestaurants[0]);
+				this.Session.Add("Restaurants", numberOfCustomersAndRestaurants[1]);
+			}
 			return View();
 		}
 
